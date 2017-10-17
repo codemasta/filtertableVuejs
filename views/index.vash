@@ -1,0 +1,44 @@
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen"
+/>
+<div class="container">
+    <h1>Filter Todo Table By Search in VueJs
+        <small>(
+            <i class="glyphicon glyphicon-filter"></i>)</small>
+    </h1>
+    <div class="row">
+        <div class="col-md-6" id="todo"> 
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">TODOS</h3> 
+                   
+                </div>
+                <div class="panel-body">
+                    <input type="text" class="form-control" placeholder="search" v-model="search"/>
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>UserName</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(item,index) in computedData" :key="item.id">
+                            <td>{{ ++index }}</td>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.username }}</td>
+                            <td>{{ item.email }}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/vue"></script>  
+<script src="/assets/data.js"></script>
